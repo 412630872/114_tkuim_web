@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>會員註冊表單</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <main class="container">
+        <h1>註冊新會員</h1>
+        <form id="registration-form" novalidate>
+            
+            <div class="form-group">
+                <label for="name">姓名</label>
+                <input type="text" id="name" name="name" required>
+                <p id="name-error" class="error-text" aria-live="polite"></p>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+                <p id="email-error" class="error-text" aria-live="polite"></p>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">手機</label>
+                <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}" maxlength="10">
+                <p id="phone-error" class="error-text" aria-live="polite"></p>
+            </div>
+
+            <div class="form-group">
+                <label for="password">密碼</label>
+                <input type="password" id="password" name="password" required minlength="8">
+                <div id="password-strength-meter" class="strength-meter">
+                    <div class="bar"></div>
+                    <span class="label">請輸入密碼</span>
+                </div>
+                <p id="password-error" class="error-text" aria-live="polite"></p>
+            </div>
+
+            <div class="form-group">
+                <label for="confirmPassword">確認密碼</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required>
+                <p id="confirmPassword-error" class="error-text" aria-live="polite"></p>
+            </div>
+
+            <div class="form-group" id="interest-group">
+                <label>興趣標籤 (至少選擇 1 個)</label>
+                <div class="interest-tags-container" role="group" aria-labelledby="interest-group">
+                    <span class="tag" data-interest="reading" tabindex="0" role="checkbox" aria-checked="false">閱讀</span>
+                    <span class="tag" data-interest="travel" tabindex="0" role="checkbox" aria-checked="false">旅行</span>
+                    <span class="tag" data-interest="coding" tabindex="0" role="checkbox" aria-checked="false">程式設計</span>
+                    <span class="tag" data-interest="sport" tabindex="0" role="checkbox" aria-checked="false">運動</span>
+                    <span class="tag" data-interest="music" tabindex="0" role="checkbox" aria-checked="false">音樂</span>
+                    <span class="tag" data-interest="craft" tabindex="0" role="checkbox" aria-checked="false">手作</span>
+                    <span class="tag" data-interest="art" tabindex="0" role="checkbox" aria-checked="false">繪畫</span>
+                </div>
+                <p id="interest-error" class="error-text" aria-live="polite"></p>
+            </div>
+
+            <div class="form-group checkbox-group">
+                <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms" id="terms-label">我已閱讀並同意服務條款</label>
+                <p id="terms-error" class="error-text" aria-live="polite"></p>
+            </div>
+
+            <div class="button-group">
+                <button type="submit" id="submit-btn">立即註冊</button>
+                <button type="button" id="reset-btn" class="secondary-btn">重設</button>
+            </div>
+            
+            <p id="submission-message" class="submission-message" aria-live="assertive"></p>
+        </form>
+    </main>
+
+    <script src="signup_form.js"></script>
+</body>
+</html>
