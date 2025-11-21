@@ -1,0 +1,59 @@
+{
+	"info": {
+		"_postman_id": "a012989b-c6e0-471e-9317-acd4174bcb25",
+		"name": "Week09 Signup",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "50240715",
+		"_collection_link": "https://willyyeh424-7580225.postman.co/workspace/Willy-Yeh's-Workspace~b8e7efdf-f4c5-4449-8119-75204fbc3573/collection/50240715-a012989b-c6e0-471e-9317-acd4174bcb25?action=share&source=collection_link&creator=50240715"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/health",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"health"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"name\": \"測試同學\",\r\n  \"email\": \"test@example.com\",\r\n  \"phone\": \"0912345678\",\r\n  \"password\": \"abc12345\",\r\n  \"confirmPassword\": \"abc12345\",\r\n  \"interests\": [\"前端\", \"後端\"],\r\n  \"terms\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/signup",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
