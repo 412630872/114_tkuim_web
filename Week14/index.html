@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>淡江大學資訊管理學系 | TKU IM Department</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header & Top Bar -->
+    <header>
+        <div class="top-bar">
+            <div class="lang-switch">
+                <span>EN</span>
+                <i class="fa-solid fa-earth-americas"></i>
+            </div>
+        </div>
+        <nav class="navbar container">
+            <div class="logo-container">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeMW1g0jtLPgZtXW8yOGDWha-FgpZ5TnFkfg&s"
+                    alt="TKU Logo" class="logo-img">
+                <div class="logo-text">
+                    <h1>淡江大學資訊管理學系</h1>
+                    <span>Department of Information Management</span>
+                </div>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#">最新消息</a></li>
+                <li>
+                    <a href="#">系所簡介 <i class="fa-solid fa-chevron-down"></i></a>
+                    <div class="dropdown">
+                        <a href="#">系所沿革</a>
+                        <a href="#">教育目標</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">本系成員 <i class="fa-solid fa-chevron-down"></i></a>
+                    <div class="dropdown">
+                        <a href="#">專任師資</a>
+                        <a href="#">行政人員</a>
+                    </div>
+                </li>
+                <li><a href="#">招生資訊</a></li>
+                <li><a href="#">課程資訊</a></li>
+                <li><a href="#">AI賦能</a></li>
+            </ul>
+
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+            <i class="fa-solid fa-magnifying-glass search-btn"></i>
+        </nav>
+    </header>
+
+    <!-- Hero Carousel -->
+    <section class="hero">
+        <div class="carousel-container">
+            <div class="slide active" style="background-image: url('https://picsum.photos/1920/600?random=1');">
+                <div class="slide-content">
+                    <h2>淡江大學資訊管理學系企業參訪</h2>
+                    <p>培育具備現代資訊技術與管理知識的專業人才</p>
+                </div>
+            </div>
+            <div class="slide" style="background-image: url('https://picsum.photos/1920/600?random=2');">
+                <div class="slide-content">
+                    <h2>國際學術交流</h2>
+                    <p>與世界接軌，拓展國際視野</p>
+                </div>
+            </div>
+            <div class="slide" style="background-image: url('https://picsum.photos/1920/600?random=3');">
+                <div class="slide-content">
+                    <h2>實務專題成果展</h2>
+                    <p>展現學生創意與實作能力的最佳舞台</p>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-controls">
+            <div class="prev"><i class="fa-solid fa-chevron-left"></i></div>
+            <div class="next"><i class="fa-solid fa-chevron-right"></i></div>
+        </div>
+        <div class="carousel-dots">
+            <span class="dot active" data-slide="0"></span>
+            <span class="dot" data-slide="1"></span>
+            <span class="dot" data-slide="2"></span>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section class="news-section container">
+        <div class="section-title">
+            <h2>最新消息</h2>
+        </div>
+        <div class="news-tabs">
+            <button class="tab-btn active" data-target="general">一般公告</button>
+            <button class="tab-btn" data-target="activity">活動公告</button>
+            <button class="tab-btn" data-target="speech">演講公告</button>
+            <button class="tab-btn" data-target="jobs">徵才專區</button>
+            <button class="tab-btn" data-target="honor">榮譽榜</button>
+        </div>
+
+        <div class="news-content">
+            <div id="general" class="news-list active">
+                <div class="news-item">
+                    <span class="news-date">2023-12-15</span>
+                    <a href="#" class="news-title">教育部駐歐盟兼駐比利時代表處教育組辦理「新伊拉斯莫斯聯合碩士學程及教育...</a>
+                </div>
+                <div class="news-item">
+                    <span class="news-date">2023-12-10</span>
+                    <a href="#" class="news-title">國泰人壽財產分享課程實習公告</a>
+                </div>
+                <div class="news-item">
+                    <span class="news-date">2023-12-05</span>
+                    <a href="#" class="news-title">常見詐騙手法及防範技巧</a>
+                </div>
+                <div class="news-more"><a href="#">更多..</a></div>
+            </div>
+            <div id="activity" class="news-list">
+                <div class="news-item">
+                    <span class="news-date">2023-11-20</span>
+                    <a href="#" class="news-title">資管週系列活動開跑！</a>
+                </div>
+                <div class="news-more"><a href="#">更多..</a></div>
+            </div>
+            <!-- Other tabs content placeholder -->
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section class="programs-section">
+        <div class="container">
+            <div class="programs-grid">
+                <div class="program-card">
+                    <i class="fa-solid fa-graduation-cap program-icon"></i>
+                    <h3>大學部</h3>
+                    <ul>
+                        <li>問題分析與關鍵思考</li>
+                        <li>企業基礎與實務知識</li>
+                        <li>資訊系統應用與開發</li>
+                        <li>程式設計與軟體工程</li>
+                    </ul>
+                </div>
+                <div class="program-card">
+                    <i class="fa-solid fa-scroll program-icon"></i>
+                    <h3>碩士班</h3>
+                    <ul>
+                        <li>現代管理知識與應用能力</li>
+                        <li>分析與關鍵思考能力</li>
+                        <li>資訊技術與管理整合能力</li>
+                        <li>獨立研究與實踐創新能力</li>
+                    </ul>
+                </div>
+                <div class="program-card">
+                    <i class="fa-solid fa-briefcase program-icon"></i>
+                    <h3>碩專班</h3>
+                    <ul>
+                        <li>培養兼備資訊技術、管理技能及具有解決問題能力的高等資訊管理實務人才</li>
+                        <li>提供各級政府、企業及非營利組織相關資訊應用之諮詢與建議</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Activities Section -->
+    <section class="activities-section container">
+        <div class="section-title">
+            <h2>活動花絮 //</h2>
+        </div>
+        <div class="activity-grid">
+            <div class="activity-item">
+                <img src="https://picsum.photos/400/300?random=4" alt="Activity 1">
+                <div class="activity-overlay">
+                    <h4>英業達企業參訪</h4>
+                    <p>深入了解企業運作與最新科技趨勢</p>
+                </div>
+            </div>
+            <div class="activity-item">
+                <img src="https://picsum.photos/400/300?random=5" alt="Activity 2">
+                <div class="activity-overlay">
+                    <h4>產學合作簽約儀式</h4>
+                    <p>攜手業界共創未來</p>
+                </div>
+            </div>
+            <div class="activity-item">
+                <img src="https://picsum.photos/400/300?random=6" alt="Activity 3">
+                <div class="activity-overlay">
+                    <h4>資管系專題講座</h4>
+                    <p>邀請專家分享業界經驗</p>
+                </div>
+            </div>
+        </div>
+        <div class="btn-container">
+            <a href="#" class="btn-primary">更多</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col footer-logo">
+                    <img src="https://www.tku.edu.tw/images/logo.png" alt="TKU Logo">
+                    <h3>資訊技術，管理思維</h3>
+                    <p>Department of Information Management, TKU</p>
+                </div>
+                <div class="footer-col">
+                    <h3>聯絡資訊</h3>
+                    <ul class="contact-info">
+                        <li><i class="fa-regular fa-clock"></i> 辦公時間: 週一至週五 08:00 - 17:00</li>
+                        <li><i class="fa-solid fa-phone"></i> (02) 2621-5656 轉 2645</li>
+                        <li><i class="fa-regular fa-envelope"></i> tlmx@oa.tku.edu.tw</li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>相關連結</h3>
+                    <ul class="contact-info">
+                        <li><a href="#">淡江大學首頁</a></li>
+                        <li><a href="#">商管學院</a></li>
+                        <li><a href="#">系友會</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div style="text-align: center; border-top: 1px solid #444; padding-top: 20px;">
+                <p>&copy; 2023 淡江大學資訊管理學系 版權所有</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="back-to-top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+
+</html>
