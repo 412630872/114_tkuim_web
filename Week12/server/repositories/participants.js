@@ -4,27 +4,49 @@ import { getDB } from '../db.js';
 
 const collection = () => getDB().collection('participants');
 
+let indexesReady = false;
+export async function ensureParticipantIndexes() {
+  if (indexesReady) return;
+
+  await collection().createIndex(
+    { email: 1 },
+    { unique: true, name: 'uniq_email' }
+  );
+
+  indexesReady = true;
+}
+
 export async function createParticipant(data) {
-  const col = collection();
-
-  const exists = await col.findOne({ email: data.email });
-  if (exists) {
-    const e = new Error("EMAIL_EXISTS");
-    e.status = 400;
-    throw e;
-  }
-
-  const result = await col.insertOne({
+  const result = await collection().insertOne({
     ...data,
+    ownerId: data.ownerId ? new ObjectId(data.ownerId) : null, // Record ownerId
     createdAt: new Date(),
     updatedAt: new Date()
   });
-  
   return result.insertedId;
 }
 
-export function listParticipants() {
-  return collection().find().sort({ createdAt: -1 }).toArray();
+export async function listParticipants({ page = 1, limit = 10, filter = {} } = {}) {
+  const col = collection();
+
+  const query = {};
+  if (filter.ownerId) {
+    query.ownerId = new ObjectId(filter.ownerId);
+  }
+
+  const skip = (page - 1) * limit;
+
+  const [items, total] = await Promise.all([
+    col
+      .find(query)
+      .sort({ createdAt: -1 })
+      .skip(skip) 
+      .limit(limit) 
+      .toArray(),
+    col.countDocuments(query)
+  ]);
+
+  return { items, total };
 }
 
 export async function updateParticipant(id, patch) {
@@ -36,4 +58,8 @@ export async function updateParticipant(id, patch) {
 
 export function deleteParticipant(id) {
   return collection().deleteOne({ _id: new ObjectId(id) });
+}
+
+export function getParticipantById(id) {
+  return collection().findOne({ _id: new ObjectId(id) });
 }

@@ -1,14 +1,21 @@
+// server/app.js
 import 'dotenv/config';
 import express from 'express';
 import cors from 'cors';
+import helmet from 'helmet';
 import { connectDB } from './db.js';
 import signupRouter from './routes/signup.js';
+import authRouter from './routes/auth.js';
+import { ensureParticipantIndexes } from './repositories/participants.js';
 
 const app = express();
-app.use(cors({ origin: process.env.ALLOWED_ORIGIN }));
+
+app.use(helmet());
+app.use(cors());
 app.use(express.json());
 
 app.use('/api/signup', signupRouter);
+app.use('/auth', authRouter);
 
 app.use((req, res) => {
   res.status(404).json({ error: 'Not Found' });
@@ -22,7 +29,9 @@ app.use((err, req, res, next) => {
 const port = process.env.PORT || 3001;
 
 connectDB()
-  .then(() => {
+  .then(async () => {
+    await ensureParticipantIndexes();
+
     app.listen(port, () => {
       console.log(`Server running on http://localhost:${port}`);
     });

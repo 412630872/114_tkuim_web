@@ -5,7 +5,6 @@ import { generateToken } from '../utils/generateToken.js';
 
 const router = express.Router();
 
-// Sign up
 router.post('/signup', async (req, res) => {
     try {
         const { email, password, role } = req.body;
@@ -38,7 +37,6 @@ router.post('/signup', async (req, res) => {
     }
 });
 
-// Login
 router.post('/login', async (req, res) => {
     try {
         const { email, password } = req.body;

@@ -1,5 +1,5 @@
 ### 建立報名
-# @name create
+# @name createReq
 POST http://localhost:3001/api/signup
 Content-Type: application/json
 
@@ -9,16 +9,29 @@ Content-Type: application/json
   "phone": "0911222333"
 }
 
-### 取得清單
-GET http://localhost:3001/api/signup
-
-### 更新
-PATCH http://localhost:3001/api/signup/{{create.response.body.id}}
+### 更新剛剛那筆（phone 或 status）
+PATCH http://localhost:3001/api/signup/{{createReq.response.body.id}}
 Content-Type: application/json
 
 {
   "phone": "0911000111"
 }
 
-### 刪除
-DELETE http://localhost:3001/api/signup/{{create.response.body.id}}
+GET http://localhost:3001/api/signup
+
+DELETE http://localhost:3001/api/signup/{{createReq.response.body.id}}
+
+GET http://localhost:3001/api/signup
+
+POST {{createReq.response.body.id}}/api/signup
+Content-Type: application/json
+
+{
+  "name": "新同學2",
+  "email": "new@example.com",
+  "phone": "0999888777"
+}
+
+GET {{createReq.response.body.id}}/api/signup?page=1&limit=3
+
+GET {{createReq.response.body.id}}/api/signup?page=2&limit=3

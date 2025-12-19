@@ -10,7 +10,7 @@ let db;
 export async function connectDB() {
   if (db) return db;
   await client.connect();
-  db = client.db(); // URI 已指定 DB，例如 .../week12
+  db = client.db(); 
   console.log("[DB] Connected to MongoDB");
   return db;
 }
