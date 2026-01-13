@@ -145,6 +145,15 @@ function logout() {
     state.user = null;
     localStorage.removeItem('token');
     localStorage.removeItem('user');
+
+    clearDraft();
+
+    forms.add.reset();
+    inputs.search.value = '';
+    inputs.filterTag.value = '';
+    elements.dashboardError.textContent = '';
+    elements.dataList.innerHTML = '';
+
     render();
 }
 
